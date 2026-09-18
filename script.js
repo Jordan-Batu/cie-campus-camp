@@ -133,6 +133,14 @@ const locations = [
         type: "Classroom",
         time: 2
     },
+        // Classroom 205
+    {
+        id: "205",
+        floor: 2,
+        name: "Room 205",
+        type: "Classroom",
+        time: 2
+    },
     
 
 
@@ -414,6 +422,128 @@ const floorLayouts = {
                 { x: 350, y: 230 }, { x: 650, y: 230 },
                 { x: 60, y: 410 },   { x: 1130, y: 350 },
                 { x: 450, y: 430 }, { x: 848, y: 430 }, { x: 990, y: 635 }
+            ],
+            hose: [
+                { x: 130, y: 230 }, { x: 1130, y: 430 }
+            ]
+        },
+        route: {
+            main: [[60, 340], [1150, 340]],
+            branches: [
+                [[300, 340], [300, 450]],
+                [[850, 340], [850, 450]],
+                [[1010, 340], [1010, 230]]
+            ]
+        }
+    },
+
+    // -------------------- FLOOR 2 --------------------
+    2: {
+        rooms: [
+            { locId: null,  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: "cr2", x: 150,  y: 0,   w: 130, h: 230, cls: "rt-cr-f",  icon: "🚺", label: "Female's CR" },
+            { locId: "201", x: 280,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 201" },
+            { locId: "202", x: 430,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 202" },
+            { locId: "203", x: 580,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 203" },
+            { locId: "204", x: 730,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 204" },
+            { locId: "205", x: 880,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 205" },
+            { locId: null,  x: 1030, y: 0,   w: 130, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+
+            { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+
+            { locId: null,  x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: null,  x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+        ],
+        entrance: { x: 10, y: 336, w: 140, h: 48 },
+        safety: {
+            exits: [
+                { x: -45, y: 345 }, { x: 1170, y: 350 },
+                { x: 50, y: 690 },
+            ],
+            extinguishers: [
+                { x: 350, y: 230 }, { x: 650, y: 230 },
+                { x: 60, y: 410 },   { x: 1130, y: 350 },
+                { x: 450, y: 430 }, { x: 898, y: 430 }, { x: 1010, y: 635 }
+            ],
+            hose: [
+                { x: 130, y: 230 }, { x: 1130, y: 430 }
+            ]
+        },
+        route: {
+            main: [[60, 340], [1150, 340]],
+            branches: [
+                [[300, 340], [300, 450]],
+                [[850, 340], [850, 450]],
+                [[1010, 340], [1010, 230]]
+            ]
+        }
+    },
+
+    // -------------------- FLOOR 3 --------------------
+    3: {
+        rooms: [
+            { locId: null,  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "pie", x: 150,  y: 0,   w: 200, h: 230, cls: "rt-special", icon: "⭐", label: "PIE" },
+            { locId: "301", x: 350,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 301" },
+            { locId: "302", x: 530,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 302" },
+            { locId: "303", x: 710,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 303" },
+            { locId: "he",  x: 890,  y: 0,   w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "HE" },
+            { locId: null,  x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+
+            { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+
+            { locId: null,  x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: null,  x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+        ],
+        entrance: { x: 10, y: 336, w: 140, h: 48 },
+        safety: {
+            exits: [
+                { x: -45, y: 345 }, { x: 1170, y: 350 },
+                { x: 50, y: 690 },
+            ],
+            extinguishers: [
+                { x: 350, y: 230 }, { x: 650, y: 230 },
+                { x: 60, y: 410 },   { x: 1130, y: 350 },
+                { x: 450, y: 430 }, { x: 898, y: 430 }, { x: 1010, y: 635 }
+            ],
+            hose: [
+                { x: 130, y: 230 }, { x: 1130, y: 430 }
+            ]
+        },
+        route: {
+            main: [[60, 340], [1150, 340]],
+            branches: [
+                [[300, 340], [300, 450]],
+                [[850, 340], [850, 450]],
+                [[1010, 340], [1010, 230]]
+            ]
+        }
+    },
+
+    // -------------------- FLOOR 4 --------------------
+    4: {
+        rooms: [
+            { locId: null,   x: 0,   y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "dean", x: 150, y: 0,   w: 300, h: 230, cls: "rt-special", icon: "⭐", label: "DEAN" },
+            { locId: "401",  x: 450, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 401" },
+            { locId: "402",  x: 700, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 402" },
+            { locId: null,   x: 950, y: 0,   w: 210, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+
+            { locId: null,   x: 0,   y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+
+            { locId: null,   x: 0,   y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: null,   x: 900, y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+        ],
+        entrance: { x: 10, y: 336, w: 140, h: 48 },
+        safety: {
+            exits: [
+                { x: -45, y: 345 }, { x: 1170, y: 350 },
+                { x: 50, y: 690 },
+            ],
+            extinguishers: [
+                { x: 350, y: 230 }, { x: 650, y: 230 },
+                { x: 60, y: 410 },   { x: 1130, y: 350 },
+                { x: 450, y: 430 }, { x: 898, y: 430 }, { x: 1010, y: 635 }
             ],
             hose: [
                 { x: 130, y: 230 }, { x: 1130, y: 430 }
