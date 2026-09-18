@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cafeteria icon">
+  <rect x="8" y="10" width="48" height="44" rx="6" fill="#f6e6c7" stroke="#7d4d2a" stroke-width="3"/>
+
+  <!-- serving counter -->
+  <rect x="14" y="22" width="36" height="10" rx="3" fill="#d9a15f" stroke="#7d4d2a" stroke-width="2"/>
+  <path d="M18 22v-6h28v6" fill="none" stroke="#7d4d2a" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- food trays / dishes -->
+  <ellipse cx="22" cy="33" rx="7" ry="4" fill="#f2c36d" stroke="#7d4d2a" stroke-width="2"/>
+  <ellipse cx="32" cy="33" rx="7" ry="4" fill="#f0b35f" stroke="#7d4d2a" stroke-width="2"/>
+  <ellipse cx="42" cy="33" rx="7" ry="4" fill="#e7a84d" stroke="#7d4d2a" stroke-width="2"/>
+
+  <!-- cup / drink -->
+  <path d="M45 38h6v5c0 3-2 5-6 5s-6-2-6-5v-5h6z" fill="#7cc7d9" stroke="#2d5b68" stroke-width="2"/>
+  <path d="M42 38h12" stroke="#2d5b68" stroke-width="2"/>
+
+  <!-- table and chairs -->
+  <rect x="16" y="44" width="10" height="6" rx="2" fill="#c98b47" stroke="#7d4d2a" stroke-width="2"/>
+  <rect x="38" y="44" width="10" height="6" rx="2" fill="#c98b47" stroke="#7d4d2a" stroke-width="2"/>
+  <path d="M19 44v-6M25 44v-6M41 44v-6M47 44v-6" stroke="#7d4d2a" stroke-width="2" stroke-linecap="round"/>
+</svg>

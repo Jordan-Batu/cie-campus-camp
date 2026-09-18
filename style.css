@@ -1,0 +1,799 @@
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f6;
+    color: #17212b;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+header {
+    background: #163a5f;
+    color: #fff;
+    padding: 14px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-icon {
+    width: 46px;
+    height: 46px;
+    background: #c0392b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+header p {
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: #cfd9e6;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.status-pin {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+.status-text {
+    font-size: 12px;
+    color: #cfd9e6;
+    line-height: 1.3;
+}
+
+.status-text b {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+}
+
+#resetViewBtn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+#resetViewBtn:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+/* ============================================================
+   MAIN APPLICATION LAYOUT
+   ============================================================ */
+
+.app {
+    display: flex;
+    height: calc(100vh - 78px);
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 18px;
+    overflow: auto;
+    border-right: 1px solid #e3e8ee;
+}
+
+.sidebar h2 {
+    font-size: 15px;
+    margin: 0 0 10px;
+}
+
+.sidebar h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: #4a5a6a;
+    margin: 20px 0 10px;
+}
+
+.sidebar input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccd5dd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* ============================================================
+   FLOOR BUTTONS
+   ============================================================ */
+
+.floor-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.floor-btn,
+.room-item {
+    border: 0;
+    border-radius: 8px;
+    padding: 11px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+}
+
+.floor-btn {
+    background: #eef2f7;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.floor-btn.active {
+    background: #163a5f;
+    color: #fff;
+}
+
+/* ============================================================
+   ROOM LIST
+   ============================================================ */
+
+.room-item {
+    width: 100%;
+    margin: 4px 0;
+    background: #f1f3f5;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.room-item:hover {
+    background: #dce9f5;
+}
+
+/* ============================================================
+   OFFLINE TIP
+   ============================================================ */
+
+.tip {
+    margin-top: 25px;
+    padding: 12px;
+    background: #edf7ea;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+/* ============================================================
+   MAP SECTION
+   ============================================================ */
+
+.map-section {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    background: #dcebd5;
+}
+
+/* Floating floor pill, top-left of the map */
+.toolbar {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #163a5f;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+}
+
+.toolbar .map-emoji {
+    font-size: 16px;
+}
+
+/* ============================================================
+   FLOOR PLAN CONTAINER
+   ============================================================ */
+
+.floor-plan {
+    position: absolute;
+    inset: 0;
+    overflow: auto;
+    padding: 90px 40px 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Decorative trees scattered on the green background, kept
+   near the outer edges so they never overlap the building */
+.map-section::before,
+.map-section::after {
+    content: "";
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: radial-gradient(circle at 50% 40%, #8fbf7a 0 55%, transparent 56%);
+    opacity: .5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.map-section::before { top: 8px; left: 8px; }
+.map-section::after { bottom: 8px; left: 46px; }
+
+/* ============================================================
+   BUILDING
+   ============================================================ */
+
+.building {
+    position: relative;
+    width: min(1160px, 100%);
+    aspect-ratio: 1160 / 680;
+    background: #f4f1ea;
+    border: 6px solid #2c333b;
+    border-radius: 4px;
+    box-shadow: 0 10px 34px rgba(0,0,0,.18);
+    overflow: visible;
+    transform-origin: top center;
+    transition: transform .15s ease;
+}
+
+.zoom-stable-icon {
+    transform-origin: center center;
+}
+
+/* ============================================================
+   ROOMS
+   ============================================================ */
+
+.room {
+    position: absolute;
+    border: 2px solid #303b45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: clamp(9px, 1.05vw, 13px);
+    line-height: 1.25;
+    padding: 4px;
+    user-select: none;
+    transition: transform .12s ease, filter .12s ease;
+}
+
+.room .r-icon {
+    font-size: clamp(14px, 1.8vw, 22px);
+    margin-bottom: 3px;
+}
+
+.room .door-icon {
+    width: clamp(18px, 2vw, 28px);
+    height: auto;
+    margin-bottom: 4px;
+    display: block;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,.08));
+}
+
+.room .floor-icon {
+    width: clamp(20px, 2.5vw, 34px);
+    height: auto;
+    display: block;
+    margin-bottom: 4px;
+    filter: drop-shadow(0 1px 0 rgba(0,0,0,.08));
+}
+
+.room .room-label {
+    display: block;
+}
+
+.room:hover {
+    filter: brightness(0.96);
+    z-index: 3;
+}
+
+.room.selected {
+    outline: 4px solid #e8a400;
+    outline-offset: -4px;
+    z-index: 4;
+}
+
+/* Room type colors, matching the legend */
+.rt-room     { background: #f2e6cf; color: #5a4a2b; }
+.rt-special  { background: #d9c8f5; color: #3e2a63; border-color: #6a3fa0; }
+.rt-stairs   { background: #c9a06a; color: #3a2c12; }
+.rt-cr-m     { background: #bcd9f2; color: #143c66; }
+.rt-cr-f     { background: #f6c9dd; color: #6b1741; }
+.rt-shaft    { background: #c9a06a; color: #3a2c12; border-color: #9a7442; }
+.rt-hallway  { background: #e4dfd2; color: #7a7563; border: none; cursor: default; }
+
+.room[style*="rt-special"] {
+    background: #d9c8f5;
+    color: #3e2a63;
+    border-color: #6a3fa0;
+}
+
+.rt-hallway:hover { filter: none; }
+
+/* ============================================================
+   ENTRANCE
+   ============================================================ */
+
+.entrance-tag {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    background: #2f8f4e;
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(10px, 1.1vw, 13px);
+    padding: 3px;
+    border-radius: 50%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.25);
+    z-index: 5;
+    white-space: nowrap;
+}
+
+.entrance-tag img {
+    width: 28px;
+    height: 28px;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   SAFETY / SIGNAGE ICONS
+   ============================================================ */
+
+.safety-icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+}
+
+.safety-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.si-extinguisher {
+    width: clamp(16px, 1.7vw, 24px);
+    height: clamp(16px, 1.7vw, 24px);
+}
+
+.si-hose {
+    width: clamp(16px, 1.7vw, 24px);
+    height: clamp(16px, 1.7vw, 24px);
+}
+
+.si-firstaid {
+    width: clamp(16px, 1.7vw, 24px);
+    height: clamp(16px, 1.7vw, 24px);
+}
+
+.si-assembly {
+    width: clamp(20px, 2vw, 28px);
+    height: clamp(20px, 2vw, 28px);
+}
+
+.si-exit {
+    width: clamp(20px, 2vw, 28px);
+    height: clamp(20px, 2vw, 28px);
+}
+
+.si-fingerprint {
+    width: clamp(16px, 1.7vw, 24px);
+    height: clamp(16px, 1.7vw, 24px);
+    background: #d81c1c;
+    border-radius: 50%;
+    color: #fff;
+    font-size: clamp(8px, 1vw, 12px);
+}
+
+/* Walking route SVG overlay 
+.route-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    overflow: visible;
+}
+
+/* ============================================================
+   INFORMATION PANEL
+   ============================================================ */
+
+.info {
+    position: absolute;
+    z-index: 8;
+    left: 18px;
+    bottom: 18px;
+    width: min(320px, calc(100% - 36px));
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px #0004;
+}
+
+.hidden {
+    display: none;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    border: 0;
+    background: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.primary {
+    width: 100%;
+    padding: 12px;
+    background: #163a5f;
+    color: white;
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* ============================================================
+   360 VIEWER STYLES
+   ============================================================ */
+
+.viewer-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.85);
+    z-index: 9999;
+    display: none;
+}
+
+.viewer-modal.active {
+    display: block;
+}
+
+#panorama {
+    width: 100%;
+    height: 100vh;
+}
+
+.viewer-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10000;
+    border: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.viewer-nav {
+    position: absolute;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+    z-index: 10000;
+    display: flex;
+    gap: 12px;
+}
+
+.viewer-nav-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.95);
+    color: #163a5f;
+    font-weight: bold;
+    padding: 12px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.panorama-label {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    z-index: 10001;
+    background: rgba(22, 58, 95, 0.9);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   ROUTE DISPLAY (info panel)
+   ============================================================ */
+
+.route {
+    margin-top: 12px;
+    padding: 12px;
+    background: #edf7ea;
+    border-radius: 7px;
+    font-size: 13px;
+}
+
+.route-line {
+    height: 4px;
+    background: #e28a00;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* ============================================================
+   LEGEND PANEL
+   ============================================================ */
+
+.legend-panel {
+    width: 250px;
+    flex-shrink: 0;
+    background: #fff;
+    border-left: 1px solid #e3e8ee;
+    padding: 18px;
+    overflow: auto;
+}
+
+.legend-panel h2 {
+    font-size: 16px;
+    margin: 0 0 14px;
+}
+
+.legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: #26313c;
+}
+
+.legend-swatch {
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    overflow: hidden;
+}
+
+.legend-swatch.image-icon {
+    background: none;
+    border-radius: 0;
+}
+
+.legend-swatch.image-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.legend-swatch.route {
+    background: none;
+    color: #1f8a3d;
+    font-size: 18px;
+}
+.legend-swatch.route svg {
+    width: 24px;
+    height: 14px;
+    flex-shrink: 0;
+    display: block;
+}
+.legend-swatch.exit { background: #1f8a3d; }
+.legend-swatch.extinguisher { background: #d81c1c; }
+.legend-swatch.hose { background: #d81c1c; border-radius: 50%; }
+.legend-swatch.firstaid { background: #d81c1c; }
+.legend-swatch.assembly { background: #2f8f4e; }
+.legend-swatch.stairs { background: #333a42; }
+.legend-swatch.restroom { background: #bcd9f2; color: #143c66; }
+.legend-swatch.roomtype {
+    background: #f2e6cf;
+    color: #5a4a2b;
+}
+.legend-swatch.roomtype svg {
+    width: 14px;
+    height: 18px;
+    flex-shrink: 0;
+    display: block;
+}
+.legend-swatch.special { background: #d9c8f5; color: #3e2a63; }
+.legend-swatch.hallway { background: #e4dfd2; color: #7a7563; }
+.legend-swatch.walls { background: #333a42; }
+
+.compass {
+    margin-top: 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #4a5a6a;
+}
+
+.compass-rose {
+    width: 56px;
+    height: 56px;
+    position: relative;
+}
+
+.compass-rose svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ============================================================
+   ZOOM CONTROLS
+   ============================================================ */
+
+.zoom-controls {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    z-index: 7;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.zoom-controls button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom-controls button:hover {
+    background: #f0f4f8;
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 1000px) {
+    .legend-panel { display: none; }
+}
+
+@media (max-width: 800px) {
+    .app {
+        display: block;
+        height: auto;
+    }
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e3e8ee;
+    }
+    .map-section {
+        height: 480px;
+    }
+    .header-right { width: 100%; justify-content: space-between; }
+}
+
+@media (max-width: 520px) {
+    .entrance-tag {
+        width: 30px;
+        height: 30px;
+        padding: 2px;
+        border-radius: 50%;
+        gap: 0;
+    }
+
+    .entrance-tag img {
+        width: 26px;
+        height: 26px;
+    }
+
+    .entrance-tag span {
+        display: none;
+    }
+
+    .safety-icon.si-extinguisher,
+    .safety-icon.si-hose,
+    .safety-icon.si-firstaid {
+        width: 16px;
+        height: 16px;
+    }
+
+    .safety-icon.si-assembly,
+    .safety-icon.si-exit {
+        width: 20px;
+        height: 20px;
+    }
+}

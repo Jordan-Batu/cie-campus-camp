@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Stairs icon">
+  <rect x="10" y="10" width="44" height="44" rx="5" fill="#e9d2a6" stroke="#7a5528" stroke-width="3"/>
+  <g fill="#7a5528" stroke="#7a5528" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 46V20h6v26M28 46V24h6v22M38 46V28h6v18"/>
+    <path d="M16 42h32"/>
+    <path d="M16 34h32"/>
+    <path d="M16 26h32"/>
+  </g>
+</svg>

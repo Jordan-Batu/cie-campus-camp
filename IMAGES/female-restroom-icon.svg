@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Female restroom icon">
+  <rect x="8" y="10" width="48" height="44" rx="6" fill="#fbeaf7" stroke="#8f3d74" stroke-width="3"/>
+  <circle cx="32" cy="20" r="7" fill="#8f3d74"/>
+  <path d="M26 28c4-3 8-3 12 0v10c0 5-3 9-6 9s-6-4-6-9V28z" fill="#8f3d74"/>
+  <path d="M22 40h20" stroke="#8f3d74" stroke-width="3" stroke-linecap="round"/>
+  <path d="M32 28v18" stroke="#8f3d74" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 20c2-4 7-6 14-6s12 2 14 6" stroke="#8f3d74" stroke-width="2" fill="none" opacity="0.5"/>
+</svg>

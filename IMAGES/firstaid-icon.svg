@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="First aid kit icon">
+  <rect x="5" y="12" width="54" height="45" rx="8" fill="#d81c1c"/>
+  <path d="M23 12V8h18v4" fill="none" stroke="#8d1111" stroke-width="4" stroke-linecap="round"/>
+  <path d="M32 22v25M19.5 34.5h25" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+</svg>

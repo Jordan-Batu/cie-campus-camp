@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Door icon">
+  <rect x="12" y="8" width="40" height="48" rx="4" fill="#f4e4c5" stroke="#7d5630" stroke-width="3"/>
+  <path d="M20 16h24v36H20z" fill="#d7b37a" stroke="#7d5630" stroke-width="2"/>
+  <circle cx="41" cy="32" r="2.5" fill="#7d5630"/>
+  <path d="M24 16v36" stroke="#7d5630" stroke-width="2" opacity="0.5"/>
+  <path d="M18 12h28v4H18z" fill="#c48a4a"/>
+</svg>

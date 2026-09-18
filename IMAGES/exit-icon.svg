@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Fire exit icon">
+  <rect x="3" y="3" width="58" height="58" rx="9" fill="#1f8a3d"/>
+  <path d="M30 13v38M30 32h24M45 23l9 9-9 9" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 48h11V16H13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
