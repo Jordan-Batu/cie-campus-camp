@@ -366,6 +366,94 @@ header p {
 .rt-shaft    { background: #c9a06a; color: #3a2c12; border-color: #9a7442; }
 .rt-hallway  { background: #e4dfd2; color: #7a7563; border: none; cursor: default; }
 
+.rt-hallway.has-garden {
+    position: relative;
+    overflow: hidden;
+}
+
+.garden-fence {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: clamp(10px, 3.2%, 16px);
+    background-image: repeating-linear-gradient(
+        90deg,
+        #333a42 0 3px,
+        transparent 3px 18px
+    );
+    background-position: center;
+    z-index: 2;
+}
+
+.garden-fence-top {
+    top: 15px;
+    left: 24.14%;
+    right: 24.14%;
+    border-top: 3px solid #333a42;
+}
+
+.garden-fence-bottom {
+    bottom: 15px;
+    left: 24.14%;
+    right: 24.14%;
+    border-top: 3px solid #333a42;
+}
+
+.garden-fence-left,
+.garden-fence-right {
+    top: 15px;
+    bottom: 15px;
+    width: clamp(10px, 3.2%, 16px);
+    height: auto;
+    background-image: repeating-linear-gradient(
+        0deg,
+        #333a42 0 3px,
+        transparent 3px 18px
+    );
+}
+
+.garden-fence-left {
+    left: 24.14%;
+    right: auto;
+    border-right: 3px solid #333a42;
+}
+
+.garden-fence-right {
+    right: 24.14%;
+    left: auto;
+    border-left: 3px solid #333a42;
+}
+
+.garden-label {
+    position: absolute;
+    top: clamp(14px, 8%, 22px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.85);
+    color: #7a7563;
+    font-size: clamp(10px, 1vw, 13px);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 3;
+}
+
+.garden-stage {
+    position: absolute;
+    width: 10%;
+    height: auto;
+    z-index: 1;
+}
+
+.garden-planter {
+    position: absolute;
+    top: 30%;
+    width: 14%;
+    height: auto;
+    z-index: 1;
+}
+
 .room[style*="rt-special"] {
     background: #d9c8f5;
     color: #3e2a63;

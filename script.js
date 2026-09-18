@@ -96,7 +96,7 @@ const locations = [
 {
     id: "cr2",
     floor: 2,
-    name: "Female's Comfort Room",
+    name: "Female's CR",
     type: "Restroom",
     time: 1
 },
@@ -388,21 +388,21 @@ const floorLayouts = {
     // -------------------- FLOOR 1 --------------------
     1: {
         rooms: [
-            { locId: null,        x: 0,    y: 0,   w: 150, h: 290, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
-            { locId: "cr-male",   x: 150,  y: 0,   w: 130, h: 290, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
-            { locId: "101",       x: 280,  y: 0,   w: 150, h: 290, cls: "rt-room",    icon: "🚪", label: "Room 101" },
-            { locId: "102",       x: 430,  y: 0,   w: 150, h: 290, cls: "rt-room",    icon: "🚪", label: "Room 102" },
-            { locId: "103",       x: 580,  y: 0,   w: 150, h: 290, cls: "rt-room",    icon: "🚪", label: "Room 103" },
-            { locId: "104",       x: 730,  y: 0,   w: 150, h: 290, cls: "rt-room",    icon: "🚪", label: "Room 104" },
-            { locId: "tad",       x: 880,  y: 0,   w: 160, h: 290, cls: "rt-special", icon: "⭐", label: "TAD" },
-            { locId: null,        x: 1040, y: 0,   w: 120, h: 290, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: null,        x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "cr-male",   x: 150,  y: 0,   w: 130, h: 230, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
+            { locId: "101",       x: 280,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101" },
+            { locId: "102",       x: 430,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 102" },
+            { locId: "103",       x: 580,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 103" },
+            { locId: "104",       x: 730,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 104" },
+            { locId: "tad",       x: 880,  y: 0,   w: 160, h: 230, cls: "rt-special", icon: "⭐", label: "TAD" },
+            { locId: null,        x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
 
-            { locId: null,        x: 0,    y: 290, w: 1160, h: 140, cls: "rt-hallway", icon: "", label: "" },
+            { locId: null,        x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
 
-            { locId: "cafeteria", x: 0,    y: 430, w: 350, h: 250, cls: "rt-special", icon: "🍽️", label: "Cafeteria" },
-            { locId: "105",       x: 410,  y: 430, w: 220, h: 250, cls: "rt-room",    icon: "🚪", label: "Room 105" },
-            { locId: "106",       x: 630,  y: 430, w: 220, h: 250, cls: "rt-room",    icon: "🚪", label: "Room 106" },
-            { locId: null,        x: 850,  y: 430, w: 310, h: 250, cls: "rt-stairs",  icon: "🪜", label: "Stairs" }
+            { locId: "cafeteria", x: 0,    y: 450, w: 260, h: 230, cls: "rt-special", icon: "🍽️", label: "Cafeteria" },
+            { locId: "105",       x: 410,  y: 450, w: 220, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 105" },
+            { locId: "106",       x: 630,  y: 450, w: 220, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 106" },
+            { locId: null,        x: 850,  y: 450, w: 310, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" }
         ],
         entrance: { x: 10, y: 336, w: 140, h: 48 },
         safety: {
@@ -411,20 +411,20 @@ const floorLayouts = {
                 { x: 50, y: 690 },
             ],
             extinguishers: [
-                { x: 350, y: 290 }, { x: 650, y: 290 },
-                { x: 60, y: 390 },   { x: 1130, y: 350 },
-                { x: 450, y: 400 }, { x: 848, y: 400 }, { x: 990, y: 645 }
+                { x: 350, y: 230 }, { x: 650, y: 230 },
+                { x: 60, y: 410 },   { x: 1130, y: 350 },
+                { x: 450, y: 430 }, { x: 848, y: 430 }, { x: 990, y: 635 }
             ],
             hose: [
-                { x: 130, y: 290 }, { x: 1130, y: 400 }
+                { x: 130, y: 230 }, { x: 1130, y: 430 }
             ]
         },
         route: {
-            main: [[60, 362], [1150, 362]],
+            main: [[60, 340], [1150, 340]],
             branches: [
-                [[300, 362], [300, 430]],
-                [[850, 362], [850, 430]],
-                [[1010, 362], [1010, 290]]
+                [[300, 340], [300, 450]],
+                [[850, 340], [850, 450]],
+                [[1010, 340], [1010, 230]]
             ]
         }
     }
@@ -443,7 +443,7 @@ function buildGenericLayout(floor) {
         .filter(x => x.floor === floor)
         .sort((a, b) => (a.special === b.special ? 0 : a.special ? 1 : -1));
 
-    const topH = 300;
+    const topH = 230;
     const hallH = CANVAS_H - topH;
     const stairW = 150;
     const usableW = CANVAS_W - stairW;
@@ -473,7 +473,7 @@ function buildGenericLayout(floor) {
         });
     });
 
-    rooms.push({ locId: null, x: 0, y: topH, w: CANVAS_W, h: hallH, cls: "rt-hallway", icon: "", label: "" });
+    rooms.push({ locId: null, x: 0, y: topH, w: CANVAS_W, h: hallH, cls: "rt-hallway", icon: "", label: "", garden: true });
 
     return {
         rooms: rooms,
@@ -548,7 +548,19 @@ function renderMap() {
         e.style.height = pctY(r.h);
 
         if (r.cls === "rt-hallway") {
-            // Decorative hallway strip — not clickable
+            e.innerHTML =
+                '<div class="garden-fence garden-fence-top"></div>' +
+                '<div class="garden-fence garden-fence-bottom"></div>' +
+                '<div class="garden-fence garden-fence-left"></div>' +
+                '<div class="garden-fence garden-fence-right"></div>' +
+                '<svg class="garden-stage" style="left:29%; top:20%; width:5%; transform:scaleX(-1);" viewBox="0 0 90 200">' +
+                '<g transform="translate(90 0) rotate(90)">' +
+                '<rect x="10" y="46" width="180" height="34" rx="3" fill="#c9a06a" stroke="#5a4a2b" stroke-width="2"/>' +
+                '<rect x="30" y="18" width="140" height="30" rx="3" fill="#e4dfd2" stroke="#5a4a2b" stroke-width="2"/>' +
+                '<rect x="0" y="70" width="200" height="10" rx="2" fill="#a9865a"/>' +
+                '</g>' +
+                '</svg>' +
+                '<svg class="garden-planter" style="left:45%;" viewBox="0 0 100 56"><ellipse cx="50" cy="46" rx="46" ry="9" fill="#c9a06a" opacity="0.55"/><ellipse cx="26" cy="30" rx="17" ry="14" fill="#1f8a3d"/><ellipse cx="50" cy="24" rx="20" ry="16" fill="#276b32"/><ellipse cx="72" cy="32" rx="15" ry="13" fill="#2f8f4e"/></svg>';
         } else if (r.icon || r.label) {
             const needsMaleRestroomImage = r.locId === "cr-male";
             const needsFemaleRestroomImage = r.locId === "cr2" || r.locId === "cr-female";
