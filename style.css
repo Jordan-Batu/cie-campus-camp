@@ -359,6 +359,7 @@ header p {
 
 /* Room type colors, matching the legend */
 .rt-room     { background: #f2e6cf; color: #5a4a2b; }
+.rt-empty    { background: #f2e6cf; color: #5a4a2b; cursor: default; pointer-events: none; }
 .rt-special  { background: #d9c8f5; color: #3e2a63; border-color: #6a3fa0; }
 .rt-stairs   { background: #c9a06a; color: #3a2c12; }
 .rt-cr-m     { background: #bcd9f2; color: #143c66; }
@@ -388,14 +389,14 @@ header p {
 .garden-fence-top {
     top: 15px;
     left: 24.14%;
-    right: 24.14%;
+    right: 37.14%;
     border-top: 3px solid #333a42;
 }
 
 .garden-fence-bottom {
     bottom: 15px;
     left: 24.14%;
-    right: 24.14%;
+    right: 37.14%;
     border-top: 3px solid #333a42;
 }
 
@@ -419,7 +420,7 @@ header p {
 }
 
 .garden-fence-right {
-    right: 24.14%;
+    right: 37.14%;
     left: auto;
     border-left: 3px solid #333a42;
 }
@@ -460,7 +461,10 @@ header p {
     border-color: #6a3fa0;
 }
 
-.rt-hallway:hover { filter: none; }
+.rt-hallway:hover {
+    filter: none;
+    z-index: 0;
+}
 
 /* ============================================================
    ENTRANCE

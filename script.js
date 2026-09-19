@@ -141,7 +141,41 @@ const locations = [
         type: "Classroom",
         time: 2
     },
-    
+    {
+        id: "206",
+        floor: 2,
+        name: "Room 206",
+        type: "Classroom",
+        time: 2
+    },
+    {
+        id: "207",
+        floor: 2,
+        name: "Room 207",
+        type: "Classroom",
+        time: 2
+    },
+    {
+        id: "208",
+        floor: 2,
+        name: "Room 208",
+        type: "Classroom",
+        time: 2
+    },
+    {
+        id: "209",
+        floor: 2,
+        name: "Room 209",
+        type: "Classroom",
+        time: 2
+    },
+    {
+        id: "210",
+        floor: 2,
+        name: "Room 210",
+        type: "Classroom",
+        time: 2
+    },
 
 
     // -------------------- Floor 3 --------------------
@@ -406,6 +440,8 @@ const floorLayouts = {
             { locId: null,        x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
 
             { locId: null,        x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+            { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
             { locId: "cafeteria", x: 0,    y: 450, w: 260, h: 230, cls: "rt-special", icon: "🍽️", label: "Cafeteria" },
             { locId: "105",       x: 410,  y: 450, w: 220, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 105" },
@@ -419,8 +455,8 @@ const floorLayouts = {
                 { x: 50, y: 690 },
             ],
             extinguishers: [
-                { x: 350, y: 230 }, { x: 650, y: 230 },
-                { x: 60, y: 410 },   { x: 1130, y: 350 },
+                { x: 350, y: 210 }, { x: 650, y: 210 },
+                { x: 60, y: 410 },   { x: 1130, y: 360 },
                 { x: 450, y: 430 }, { x: 848, y: 430 }, { x: 990, y: 635 }
             ],
             hose: [
@@ -450,9 +486,14 @@ const floorLayouts = {
             { locId: null,  x: 1030, y: 0,   w: 130, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
 
             { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+                { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
-            { locId: null,  x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
-            { locId: null,  x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+            { locId: "206", x: 0,    y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 206" },
+            { locId: "207", x: 200,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 207" },
+            { locId: "208", x: 400,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 208" },
+            { locId: "209", x: 600,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 209" },
+            { locId: "210", x: 800,  y: 450, w: 360, h: 230, cls: "rt-room", icon: "🚪", label: "Room 210" }
         ],
         entrance: { x: 10, y: 336, w: 140, h: 48 },
         safety: {
@@ -491,6 +532,8 @@ const floorLayouts = {
             { locId: null,  x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
 
             { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+                { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
             { locId: null,  x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
             { locId: null,  x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
@@ -530,6 +573,8 @@ const floorLayouts = {
             { locId: null,   x: 950, y: 0,   w: 210, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
 
             { locId: null,   x: 0,   y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+                { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
             { locId: null,   x: 0,   y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
             { locId: null,   x: 900, y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
@@ -890,6 +935,30 @@ function locate() {
     } else if (x.id === "202") {
         route =
             "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202";
+    } else if (x.id === "203") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203";
+    } else if (x.id === "204") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204";
+    } else if (x.id === "205") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205";
+    } else if (x.id === "206") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206";
+    } else if (x.id === "207") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207";
+    } else if (x.id === "208") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208";
+    } else if (x.id === "209") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 209";
+    } else if (x.id === "210") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 209 → Room 210";
 
 
     // -------------------- FLOOR 3 --------------------
@@ -1036,6 +1105,15 @@ const panoramas = {
 
     // Second floor images
     "201": "360/room201.jpg",
+    "202": "360/EXIMG.jpg",
+    "203": "360/EXIMG.jpg",
+    "204": "360/EXIMG.jpg",
+    "205": "360/EXIMG.jpg",
+    "206": "360/EXIMG.jpg",
+    "207": "360/EXIMG.jpg",
+    "208": "360/EXIMG.jpg",
+    "209": "360/EXIMG.jpg",
+    "210": "360/EXIMG.jpg",
 
     // Third floor images
     "301": "/360/room301.jpg",
@@ -1072,6 +1150,15 @@ const panoramaOrder = [
     "tad",
     "cafeteria",
     "201",
+    "202",
+    "203",
+    "204",
+    "205",
+    "206",
+    "207",
+    "208",
+    "209",
+    "210",
     "301",
     "pie",
     "dean"
