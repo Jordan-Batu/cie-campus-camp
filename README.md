@@ -1,2 +1,2 @@
 ﻿# cie-campus-camp
-https://jordan-batu.github.io/cie-campus-camp-1.0/
+https://jordan-batu.github.io/cie-campus-camp/
