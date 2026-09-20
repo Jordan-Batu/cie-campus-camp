@@ -1,3 +1,3 @@
 ﻿# cie-campus-camp
 https://jordan-batu.github.io/cie-campus-camp/
-group three
+group one research
