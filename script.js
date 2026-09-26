@@ -844,7 +844,7 @@ function renderMap() {
         if (r.clipPath) e.style.clipPath = r.clipPath;
         if (r.locId === "cafeteria") {
             e.style.justifyContent = "flex-end";
-            e.style.paddingBottom = "70px";
+            e.style.paddingBottom = "40px";
         }
 
         if (r.cls === "rt-hallway") {
