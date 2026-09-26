@@ -570,8 +570,8 @@ const floorLayouts = {
             { locId: "stairs-1-east", x: 1081, y: 0,   w: 81, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null,        x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-            { locId: "106",      x: 770,  y: 270, w: 130,  h: 180, cls: "rt-room",    icon: "🚪", label: "Room 106 - Control Room" },
-            { locId: "107",      x: 900,  y: 270, w: 130,  h: 410, cls: "rt-room",    icon: "🚪", label: "Room 107 - CITE" },
+            { locId: "106",      x: 900,  y: 270, w: 130,  h: 410, cls: "rt-room",    icon: "🚪", label: "Room 106 - Control Room" },
+            { locId: "107",      x: 770,  y: 270, w: 130,  h: 180, cls: "rt-room",    icon: "🚪", label: "Room 107 - CITE" },
 
             {
                 locId: "cafeteria",
@@ -593,7 +593,7 @@ const floorLayouts = {
                 { x: 50, y: 690 },
             ],
             extinguishers: [
-                   { x: 700, y: 210 },
+                   { x: 700, y: 210 },  { x: 960, y: 210 },
             
                 { x: 450, y: 430 },  
             ],
@@ -601,7 +601,7 @@ const floorLayouts = {
                { x: 1130, y: 430 }
             ],
             fireAlarms: [
-                { x: 350, y: 210 }, { x: 720, y: 435 },   { x: 650, y: 210 },
+                { x: 350, y: 210 }, { x: 720, y: 435 },   { x: 650, y: 210 },  { x: 920, y: 210 },
             ]
         },
         route: {
