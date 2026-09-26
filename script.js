@@ -500,8 +500,29 @@ function renderList() {
 
         b.className = "room-item";
 
-        // Use a different icon for special locations
-        b.textContent = (x.special ? "🏛️ " : "🚪 ") + x.name;
+        let icon = document.createElement("img");
+        icon.className = "room-item-icon";
+        icon.alt = "";
+
+        if (x.id === "cafeteria") {
+            icon.src = "IMAGES/cafeteria-icon.svg";
+        } else if (x.id.startsWith("stairs-")) {
+            icon.src = "IMAGES/stairs-icon.svg";
+        } else if (x.id === "cr-male") {
+            icon.src = "IMAGES/male-restroom-icon.svg";
+        } else if (x.id === "cr-female") {
+            icon.src = "IMAGES/female-restroom-icon.svg";
+        } else if (x.special) {
+            icon.remove();
+            icon = document.createElement("span");
+            icon.className = "room-item-icon room-item-emoji";
+            icon.textContent = "⭐";
+        } else {
+            icon.src = "IMAGES/door-icon.svg";
+        }
+
+        b.appendChild(icon);
+        b.appendChild(document.createTextNode(x.name));
 
         // Select location when clicked
         b.onclick = () => selectLocation(x.id);

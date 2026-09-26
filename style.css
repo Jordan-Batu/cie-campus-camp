@@ -203,6 +203,20 @@ header p {
     background: #dce9f5;
 }
 
+.room-item-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex: 0 0 16px;
+}
+
+.room-item-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
 /* ============================================================
    OFFLINE TIP
    ============================================================ */
