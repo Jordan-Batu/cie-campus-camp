@@ -361,6 +361,7 @@ header p {
 .rt-room     { background: #f2e6cf; color: #5a4a2b; }
 .rt-empty    { background: #f2e6cf; color: #5a4a2b; cursor: default; pointer-events: none; }
 .rt-special  { background: #d9c8f5; color: #3e2a63; border-color: #6a3fa0; }
+.cafeteria-shape { clip-path: polygon(0 0, 25% 0, 25% 25%, 100% 25%, 100% 100%, 0 100%); }
 .rt-stairs   { background: #c9a06a; color: #3a2c12; }
 .rt-cr-m     { background: #bcd9f2; color: #143c66; }
 .rt-cr-f     { background: #f6c9dd; color: #6b1741; }
@@ -522,6 +523,11 @@ header p {
 }
 
 .si-hose {
+    width: clamp(16px, 1.7vw, 24px);
+    height: clamp(16px, 1.7vw, 24px);
+}
+
+.si-fire-alarm {
     width: clamp(16px, 1.7vw, 24px);
     height: clamp(16px, 1.7vw, 24px);
 }

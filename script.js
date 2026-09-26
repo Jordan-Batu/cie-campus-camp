@@ -5,6 +5,91 @@
 const locations = [
  // -------------------- Floor 1 --------------------
 
+{
+    id: "stairs-1-west",
+    floor: 1,
+    name: "West Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-1-east",
+    floor: 1,
+    name: "East Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-2-west",
+    floor: 2,
+    name: "West Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-2-east",
+    floor: 2,
+    name: "East Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-3-west",
+    floor: 3,
+    name: "West Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-3-east",
+    floor: 3,
+    name: "East Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-3-south-west",
+    floor: 3,
+    name: "Southwest Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-3-south-east",
+    floor: 3,
+    name: "Southeast Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-4-west",
+    floor: 4,
+    name: "West Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-4-east",
+    floor: 4,
+    name: "East Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-4-south-west",
+    floor: 4,
+    name: "Southwest Stairs",
+    type: "Stairs",
+    time: 1
+},
+{
+    id: "stairs-4-south-east",
+    floor: 4,
+    name: "Southeast Stairs",
+    type: "Stairs",
+    time: 1
+},
+
 // Comfort room (male)
 {
     id: "cr-male",
@@ -26,35 +111,42 @@ const locations = [
 },
 
 
-// Classroom 101
+// Welding Room
+{
+    id: "welding-room",
+    floor: 1,
+    name: "Room 101 - Welding Room",
+    type: "laboratory",
+    time: 1
+},
+
+// Technology Shop
+{
+    id: "tech-shop",
+    floor: 1,
+    name: "Room 101 - Technology Room",
+    type: "laboratory",
+    time: 1
+},
 {
     id: "101",
     floor: 1,
     name: "Room 101",
-    type: "Classroom",
-    time: 1
-},
-
-// Classroom 102
-{
-    id: "102",
-    floor: 1,
-    name: "Room 102",
-    type: "Classroom",
+    type: "laboratory",
     time: 1
 },
 {
-    id: "103",
+    id: "106",
     floor: 1,
-    name: "Room 103",
-    type: "Classroom",
+    name: "Room 106 - Control Room",
+    type: "Control Room",
     time: 1
 },
 {
-    id: "104",
+    id: "107",
     floor: 1,
-    name: "Room 104",
-    type: "Classroom",
+    name: "Room 107 - CITE",
+    type: "Department",
     time: 1
 },
 // Technical Arts Department
@@ -68,10 +160,26 @@ const locations = [
     special: true
 },
 {
+    id: "103",
+    floor: 1,
+    name: "Room 103 - Faculty Lounge",
+    type: "Faculty Lounge",
+    time: 1
+},
+{
+    id: "104",
+    floor: 1,
+    name: "Room 104",
+    type: "Classroom",
+    time: 1
+},
+{
     id: "105",
     floor: 1,
-    name: "Room 105",
-    type: "Classroom",
+    name: "Cafeteria",
+    shortName: "CAFETERIA",
+    type: "Cafeteria Area",
+    area: "Cafeteria",
     time: 1
 },
 // Cafeteria — special location
@@ -85,9 +193,9 @@ const locations = [
     special: true
 },
 {
-    id: "106",
+    id: "108",
     floor: 1,
-    name: "Room 106",
+    name: "Room 108",
     type: "Classroom",
     time: 1
 },
@@ -430,37 +538,49 @@ const floorLayouts = {
     // -------------------- FLOOR 1 --------------------
     1: {
         rooms: [
-            { locId: null,        x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
-            { locId: "cr-male",   x: 150,  y: 0,   w: 130, h: 230, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
-            { locId: "101",       x: 280,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101" },
-            { locId: "102",       x: 430,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 102" },
-            { locId: "103",       x: 580,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 103" },
-            { locId: "104",       x: 730,  y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 104" },
-            { locId: "tad",       x: 880,  y: 0,   w: 160, h: 230, cls: "rt-special", icon: "⭐", label: "TAD" },
-            { locId: null,        x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "stairs-1-west", x: 0,    y: 0,   w: 100, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
+            { locId: "cr-male",   x: 100,  y: 0,   w: 90, h: 230, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
+            { locId: "welding-room", x: 190, y: 0,   w: 170, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101 - Welding Room" },
+            { locId: "tech-shop",    x: 360, y: 0,   w: 210, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101 - Technology Room" },
+            { locId: "101",       x: 570,  y: 0,   w: 210, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101" },
+            { locId: "tad",       x: 780,  y: 0,   w: 130, h: 230, cls: "rt-special", icon: "⭐", label: "TAD" },
+            { locId: "103",       x: 910,  y: 0,   w: 90,  h: 230, cls: "rt-room",    icon: "🚪", label: "Room 103 - Faculty Lounge" },
+            { locId: "104",       x: 1000,  y: 0,   w: 85,  h: 230, cls: "rt-room",    icon: "🚪", label: "Room 104" },
+            { locId: "stairs-1-east", x: 1081, y: 0,   w: 81, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null,        x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-            { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
-            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+            { locId: "106",      x: 770,  y: 270, w: 130,  h: 180, cls: "rt-room",    icon: "🚪", label: "Room 106 - Control Room" },
+            { locId: "107",      x: 900,  y: 270, w: 130,  h: 410, cls: "rt-room",    icon: "🚪", label: "Room 107 - CITE" },
 
-            { locId: "cafeteria", x: 0,    y: 450, w: 260, h: 230, cls: "rt-special", icon: "🍽️", label: "Cafeteria" },
-            { locId: "105",       x: 410,  y: 450, w: 220, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 105" },
-            { locId: "106",       x: 630,  y: 450, w: 220, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 106" },
-            { locId: null,        x: 850,  y: 450, w: 310, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" }
+            {
+                locId: "cafeteria",
+                x: 0,
+                y: 280,
+                w: 570,
+                h: 400,
+                cls: "rt-special",
+                icon: "🍽️",
+                label: "Cafeteria",
+                clipPath: "polygon(0 0, 39.68% 0, 39.68% 42.5%, 100% 42.5%, 100% 100%, 0 100%)"
+            },
+            { locId: "108",       x: 570,  y: 450, w: 330, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 108" }
         ],
-        entrance: { x: 10, y: 336, w: 140, h: 48 },
+        entrance: { x: -60, y: 233, w: 140, h: 48 },
         safety: {
             exits: [
-                { x: -45, y: 345 }, { x: 1170, y: 350 },
+                { x: 0, y: 233 },
                 { x: 50, y: 690 },
             ],
             extinguishers: [
-                { x: 350, y: 210 }, { x: 650, y: 210 },
-                { x: 60, y: 410 },   { x: 1130, y: 360 },
-                { x: 450, y: 430 }, { x: 848, y: 430 }, { x: 990, y: 635 }
+                   { x: 700, y: 210 },
+            
+                { x: 450, y: 430 },  
             ],
             hose: [
-                { x: 130, y: 210     }, { x: 1130, y: 430 }
+               { x: 1130, y: 430 }
+            ],
+            fireAlarms: [
+                { x: 350, y: 210 }, { x: 720, y: 435 },   { x: 650, y: 210 },
             ]
         },
         route: {
@@ -476,14 +596,14 @@ const floorLayouts = {
     // -------------------- FLOOR 2 --------------------
     2: {
         rooms: [
-            { locId: null,  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: "stairs-2-west",  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs", icon: "🪜", label: "West Stairs" },
             { locId: "cr2", x: 150,  y: 0,   w: 130, h: 230, cls: "rt-cr-f",  icon: "🚺", label: "Female's CR" },
             { locId: "201", x: 280,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 201" },
             { locId: "202", x: 430,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 202" },
             { locId: "203", x: 580,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 203" },
             { locId: "204", x: 730,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 204" },
             { locId: "205", x: 880,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 205" },
-            { locId: null,  x: 1030, y: 0,   w: 130, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
+            { locId: "stairs-2-east",  x: 1030, y: 0,   w: 130, h: 230, cls: "rt-stairs", icon: "🪜", label: "East Stairs" },
 
             { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
                 { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
@@ -523,20 +643,20 @@ const floorLayouts = {
     // -------------------- FLOOR 3 --------------------
     3: {
         rooms: [
-            { locId: null,  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "stairs-3-west",  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
             { locId: "pie", x: 150,  y: 0,   w: 200, h: 230, cls: "rt-special", icon: "⭐", label: "PIE" },
             { locId: "301", x: 350,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 301" },
             { locId: "302", x: 530,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 302" },
             { locId: "303", x: 710,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 303" },
             { locId: "he",  x: 890,  y: 0,   w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "HE" },
-            { locId: null,  x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "stairs-3-east",  x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
                 { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
             { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
-            { locId: null,  x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
-            { locId: null,  x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+            { locId: "stairs-3-south-west", x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southwest Stairs" },
+            { locId: "stairs-3-south-east", x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southeast Stairs" }
         ],
         entrance: { x: 10, y: 336, w: 140, h: 48 },
         safety: {
@@ -566,18 +686,18 @@ const floorLayouts = {
     // -------------------- FLOOR 4 --------------------
     4: {
         rooms: [
-            { locId: null,   x: 0,   y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "stairs-4-west",   x: 0,   y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
             { locId: "dean", x: 150, y: 0,   w: 300, h: 230, cls: "rt-special", icon: "⭐", label: "DEAN" },
             { locId: "401",  x: 450, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 401" },
             { locId: "402",  x: 700, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 402" },
-            { locId: null,   x: 950, y: 0,   w: 210, h: 230, cls: "rt-stairs",  icon: "🪜", label: "Stairs" },
+            { locId: "stairs-4-east",   x: 950, y: 0,   w: 210, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null,   x: 0,   y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
                 { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
             { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
 
-            { locId: null,   x: 0,   y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" },
-            { locId: null,   x: 900, y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Stairs" }
+            { locId: "stairs-4-south-west", x: 0,   y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southwest Stairs" },
+            { locId: "stairs-4-south-east", x: 900, y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southeast Stairs" }
         ],
         entrance: { x: 10, y: 336, w: 140, h: 48 },
         safety: {
@@ -721,6 +841,11 @@ function renderMap() {
         e.style.top = pctY(r.y);
         e.style.width = pctX(r.w);
         e.style.height = pctY(r.h);
+        if (r.clipPath) e.style.clipPath = r.clipPath;
+        if (r.locId === "cafeteria") {
+            e.style.justifyContent = "flex-end";
+            e.style.paddingBottom = "70px";
+        }
 
         if (r.cls === "rt-hallway") {
             e.innerHTML =
@@ -741,7 +866,7 @@ function renderMap() {
             const needsFemaleRestroomImage = r.locId === "cr2" || r.locId === "cr-female";
             const needsDoorImage = ["🚪", "🚹", "🚺", "🚻"].includes(r.icon) && !needsMaleRestroomImage && !needsFemaleRestroomImage;
             const needsStairsImage = r.cls === "rt-stairs";
-            const needsCafeteriaImage = r.locId === "cafeteria";
+            const needsCafeteriaImage = r.locId === "cafeteria" || r.locId === "105";
 
             e.innerHTML =
                 (needsMaleRestroomImage
@@ -833,6 +958,9 @@ function renderMap() {
     (safety.hose || []).forEach(p =>
         b.appendChild(makeSafetyIcon("si-hose", "hose-icon.svg", p.x, p.y, "Fire Hose Cabinet"))
     );
+    (safety.fireAlarms || []).forEach(p =>
+        b.appendChild(makeSafetyIcon("si-fire-alarm", "fire-alarm-icon.svg", p.x, p.y, "Fire Alarm"))
+    );
     (safety.firstAid || []).forEach(p =>
         b.appendChild(makeSafetyIcon("si-firstaid", "firstaid-icon.svg", p.x, p.y, "First Aid Kit"))
     );
@@ -916,15 +1044,21 @@ function locate() {
     if (x.id === "cafeteria") {
         route =
             "🚪 Entrance → 1st Floor Hallway → 🍽️ Cafeteria";
-    } else if (x.id === "101") {
+    } else if (x.id === "welding-room") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101";
-    } else if (x.id === "102") {
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room";
+    } else if (x.id === "tech-shop") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 → Room 102";
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room → Room 101 - Technology Room";
     } else if (x.id === "tad") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 → Room 102 → 🏛️ TAD";
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room → Room 101 - Technology Room → 🏛️ TAD";
+    } else if (x.id === "103") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ TAD → Room 103 - Faculty Lounge";
+    } else if (x.id === "104") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ TAD → Room 103 - Faculty Lounge → Room 104";
 
 
     // -------------------- FLOOR 2 --------------------
@@ -1097,10 +1231,9 @@ const panoramas = {
     // First floor images
     "cr-male": "360/PIC EXAM.jpg",
     cafeteria: "360/cafeteria.jpg",
+    "welding-room": "360/Room 101 _ Welding Room_.jpg",
+    "tech-shop": "360/EXIMG.jpg",
     "101": "360/1.Ex.png",
-    "102": "360/EXIMG.jpg",
-    "103": "360/1.Ex.png",
-    "104": "360/EXIMG.jpg",
     tad: "360/PIC EXAM.jpg",
 
     // Second floor images
@@ -1143,10 +1276,9 @@ const panoramaLabel = document.getElementById("panoramaLabel");
 const panoramaOrder = [
     "cr-male",
     "cr-female",
+    "welding-room",
+    "tech-shop",
     "101",
-    "102",
-    "103",
-    "104",
     "tad",
     "cafeteria",
     "201",
