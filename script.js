@@ -138,22 +138,24 @@ const locations = [
 {
     id: "106",
     floor: 1,
-    name: "Room 106 - Control Room",
-    type: "Control Room",
-    time: 1
+    name: "Room 106 - CITE",
+    type: "Department",
+    time: 1,
+    special: true
 },
 {
     id: "107",
     floor: 1,
     name: "Room 107 - CITE",
     type: "Department",
-    time: 1
+    time: 1,
+    special: true
 },
 // Technical Arts Department
 {
     id: "tad",
     floor: 1,
-    name: "Technical Arts Department",
+    name: "Room 102 - TAD",
     shortName: "TAD",
     type: "Department",
     time: 1,
@@ -259,9 +261,11 @@ const locations = [
     {
         id: "207",
         floor: 2,
-        name: "Room 207",
-        type: "Classroom",
-        time: 2
+        name: "Room 207 - HE",
+        shortName: "HE",
+        type: "Department",
+        time: 2,
+        special: true
     },
     {
         id: "208",
@@ -271,16 +275,39 @@ const locations = [
         time: 2
     },
     {
-        id: "209",
+        id: "210",
         floor: 2,
-        name: "Room 209",
+        name: "Room 210 - Library",
+        type: "Library",
+        time: 2
+    },
+    {
+        id: "211",
+        floor: 2,
+        name: "Room 211 - Accredity",
+        type: "Department",
+        time: 2,
+        special: true
+    },
+    {
+        id: "212",
+        floor: 2,
+        name: "Room 212 - Research / Extension",
+        type: "Department",
+        time: 2,
+        special: true
+    },
+    {
+        id: "213",
+        floor: 2,
+        name: "Room 213",
         type: "Classroom",
         time: 2
     },
     {
-        id: "210",
+        id: "214",
         floor: 2,
-        name: "Room 210",
+        name: "Room 214",
         type: "Classroom",
         time: 2
     },
@@ -288,13 +315,21 @@ const locations = [
 
     // -------------------- Floor 3 --------------------
     // Professional Industrial Education Department
-    
 
-    // Classroom 301
+    // Classroom 300
     {
-        id: "301",
+        id: "300",
         floor: 3,
-        name: "Room 301",
+        name: "Room 300",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 302
+    {
+        id: "302",
+        floor: 3,
+        name: "Room 302",
         type: "Classroom",
         time: 2
     },
@@ -302,47 +337,118 @@ const locations = [
         id: "pie",
         floor: 3,
         name: "Professional Industrial Education",
-        shortName: "PIE",
+        Name: "PIE",
         type: "Department",
         time: 2,
         special: true
     },
 
-    // Computer Laboratory 302
-    {
-        id: "302",
-        floor: 3,
-        name: "Room 302",
-        type: "Computer Laboratory",
-        time: 2
-    },
-
-    // Classroom 303
+    // Computer Laboratory 303
     {
         id: "303",
         floor: 3,
         name: "Room 303",
+        type: "Computer Laboratory",
+        time: 2
+    },
+
+    // Classroom 304
+    {
+        id: "304",
+        floor: 3,
+        name: "Room 304",
         type: "Classroom",
         time: 2
     },
-     // Home Economics Department
+
+    // Classroom 305
     {
-        id: "he",
+        id: "305",
         floor: 3,
-        name: "Home Economics Department",
-        shortName: "HE",
-        type: "Department",
-        time: 2,
-        special: true
+        name: "Room 305",
+        type: "Classroom",
+        time: 2
     },
 
-    // -------------------- Floor 4 --------------------
+    // Classroom 306
+    {
+        id: "306",
+        floor: 3,
+        name: "Room 306",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 307
+    {
+        id: "307",
+        floor: 3,
+        name: "Room 307",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 308
+    {
+        id: "308",
+        floor: 3,
+        name: "Room 308",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 308B
+    {
+        id: "308B",
+        floor: 3,
+        name: "Room 308B",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 309
+    {
+        id: "309",
+        floor: 3,
+        name: "Room 309",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 310
+    {
+        id: "310",
+        floor: 3,
+        name: "Room 310",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 311
+    {
+        id: "311",
+        floor: 3,
+        name: "Room 311",
+        type: "Classroom",
+        time: 2
+    },
+
+    // Classroom 312
+    {
+        id: "312",
+        floor: 3,
+        name: "Room 312",
+        type: "Classroom",
+        time: 2
+    },
+
+    // -------------------- Floor 2 --------------------
     // Dean's Office
     {
         id: "dean",
-        floor: 4,
-        name: "Dean's Office",
-        shortName: "DEAN",
+        floor: 2,
+        name: "Room 209 - DEAN",
+        shortName: "Room 209 - DEAN",
         type: "Office",
         time: 3,
         special: true
@@ -373,7 +479,7 @@ const locations = [
 // ============================================================
 
 // Keeps track of the currently selected floor
-let currentFloor = 1;
+let currentFloor = 2;
 
 // Stores the location currently selected by the user
 let selectedLocation = null;
@@ -559,19 +665,19 @@ const floorLayouts = {
     // -------------------- FLOOR 1 --------------------
     1: {
         rooms: [
-            { locId: "stairs-1-west", x: 0,    y: 0,   w: 100, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
-            { locId: "cr-male",   x: 100,  y: 0,   w: 90, h: 230, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
+            { locId: "stairs-1-west", x: 0,    y: 0,   w: 90, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
+            { locId: "cr-male",   x: 90,  y: 0,   w: 100, h: 230, cls: "rt-cr-m",    icon: "🚹", label: "Male's CR" },
             { locId: "welding-room", x: 190, y: 0,   w: 170, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101 - Welding Room" },
             { locId: "tech-shop",    x: 360, y: 0,   w: 210, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101 - Technology Room" },
             { locId: "101",       x: 570,  y: 0,   w: 210, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 101" },
-            { locId: "tad",       x: 780,  y: 0,   w: 130, h: 230, cls: "rt-special", icon: "⭐", label: "TAD" },
+            { locId: "tad",       x: 780,  y: 0,   w: 130, h: 230, cls: "rt-special", icon: "⭐", label: "Room 102 - TAD" },
             { locId: "103",       x: 910,  y: 0,   w: 90,  h: 230, cls: "rt-room",    icon: "🚪", label: "Room 103 - Faculty Lounge" },
-            { locId: "104",       x: 1000,  y: 0,   w: 85,  h: 230, cls: "rt-room",    icon: "🚪", label: "Room 104" },
+            { locId: "104",       x: 1000,  y: 0,   w: 83,  h: 230, cls: "rt-room",    icon: "🚪", label: "Room 104" },
             { locId: "stairs-1-east", x: 1081, y: 0,   w: 81, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null,        x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-            { locId: "106",      x: 900,  y: 270, w: 130,  h: 410, cls: "rt-room",    icon: "🚪", label: "Room 106 - Control Room" },
-            { locId: "107",      x: 770,  y: 270, w: 130,  h: 180, cls: "rt-room",    icon: "🚪", label: "Room 107 - CITE" },
+            { locId: "106",      x: 900,  y: 270, w: 130,  h: 410, cls: "rt-special", icon: "⭐", label: "Room 106 - CITE" },
+            { locId: "107",      x: 770,  y: 270, w: 130,  h: 180, cls: "rt-special", icon: "⭐", label: "Room 107 - CITE" },
 
             {
                 locId: "cafeteria",
@@ -617,38 +723,46 @@ const floorLayouts = {
     // -------------------- FLOOR 2 --------------------
     2: {
         rooms: [
-            { locId: "stairs-2-west",  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs", icon: "🪜", label: "West Stairs" },
-            { locId: "cr2", x: 150,  y: 0,   w: 130, h: 230, cls: "rt-cr-f",  icon: "🚺", label: "Female's CR" },
-            { locId: "201", x: 280,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 201" },
-            { locId: "202", x: 430,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 202" },
-            { locId: "203", x: 580,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 203" },
-            { locId: "204", x: 730,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 204" },
-            { locId: "205", x: 880,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 205" },
-            { locId: "stairs-2-east",  x: 1030, y: 0,   w: 130, h: 230, cls: "rt-stairs", icon: "🪜", label: "East Stairs" },
+            { locId: "stairs-2-west",  x: 0,    y: 0,   w: 90, h: 230, cls: "rt-stairs", icon: "🪜", label: "West Stairs" },
+            { locId: "cr2", x: 90,  y: 0,   w: 100, h: 230, cls: "rt-cr-f",  icon: "🚺", label: "Female's CR" },
+            { locId: "201", x: 190,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 201" },
+            { locId: "202", x: 340,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 203" },
+            { locId: "204", x: 490,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 204" },
+            { locId: "205", x: 640,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 205" },
+            { locId: "206", x: 790,  y: 0,   w: 150, h: 230, cls: "rt-room",  icon: "🚪", label: "Room 206" },
+            { locId: "207", x: 940,  y: 0,   w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "Room 207 - HE" },
+            { locId: "stairs-2-east",  x: 1081, y: 0,   w: 81, h: 230, cls: "rt-stairs", icon: "🪜", label: "East Stairs" },
 
             { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-                { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
-            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
+        
+            /*{ locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },*/
 
-            { locId: "206", x: 0,    y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 206" },
-            { locId: "207", x: 200,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 207" },
-            { locId: "208", x: 400,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 208" },
-            { locId: "209", x: 600,  y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 209" },
-            { locId: "210", x: 800,  y: 450, w: 360, h: 230, cls: "rt-room", icon: "🚪", label: "Room 210" }
+            { locId: "214", x: 0, y: 270, w: 200, h: 180, cls: "rt-room", icon: "🚪", label: "Room 214" },
+            { locId: "210", x: 550,    y: 450, w: 150   , h: 230, cls: "rt-special", icon: "⭐", label: "Room 210 - Library" },
+            { locId: "211", x: 400,  y: 450, w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "Room 211 - Accredity" },
+            { locId: "212", x: 250,  y: 450, w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "Room 212 - Research / Extension" },
+            { locId: "213", x: 0,  y: 450, w: 250, h: 230, cls: "rt-room", icon: "🚪", label: "Room 213" },
+            { locId: "dean", x: 700, y: 450, w: 300, h: 230, cls: "rt-special", icon: "⭐", label: "Room 209 - DEAN" },
+            { locId: "208", x: 800,  y: 270, w: 200, h: 180, cls: "rt-room", icon: "🚪", label: "Room 208" }
         ],
-        entrance: { x: 10, y: 336, w: 140, h: 48 },
+        entrances: [
+            { x: -20, y: 230 },
+            { x: 1150, y: 235 }
+        ],
         safety: {
             exits: [
-                { x: -45, y: 345 }, { x: 1170, y: 350 },
-                { x: 50, y: 690 },
+                { x: 30, y: 230 }, { x: 1105, y: 235 },
             ],
             extinguishers: [
-                { x: 350, y: 210 }, { x: 650, y: 210 },
-                { x: 60, y: 410 },   { x: 1130, y: 360 },
-                { x: 450, y: 430 }, { x: 898, y: 430 }, { x: 1010, y: 635 }
+                { x: 850, y: 210 },
+                { x: 180, y: 300 },   
+                
             ],
             hose: [
-                { x: 130, y: 210     }, { x: 1130, y: 430 }
+                /*{ x: 130, y: 210 },*/
+            ],
+            fireAlarms: [
+                { x: 265, y: 210 }
             ]
         },
         route: {
@@ -664,34 +778,40 @@ const floorLayouts = {
     // -------------------- FLOOR 3 --------------------
     3: {
         rooms: [
-            { locId: "stairs-3-west",  x: 0,    y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
-            { locId: "pie", x: 150,  y: 0,   w: 200, h: 230, cls: "rt-special", icon: "⭐", label: "PIE" },
-            { locId: "301", x: 350,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 301" },
-            { locId: "302", x: 530,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 302" },
-            { locId: "303", x: 710,  y: 0,   w: 180, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 303" },
-            { locId: "he",  x: 890,  y: 0,   w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "HE" },
-            { locId: "stairs-3-east",  x: 1040, y: 0,   w: 120, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
+            { locId: "stairs-3-west", x: 0,   y: 0,   w: 90, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
+            { locId: "pie",          x: 90, y: 0,   w: 190, h: 230, cls: "rt-special", icon: "⭐", label: "Room 301 - PIE" },
+            { locId: "302",          x: 280, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 302" },
+            { locId: "303",          x: 430, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 303" },
+            { locId: "304",          x: 580, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 304" },
+            { locId: "305",          x: 730, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 305" },
+            { locId: "306",          x: 880, y: 0,   w: 191, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 306" },
+            { locId: "stairs-3-east", x: 1071, y: 0,   w: 90, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
-            { locId: null,  x: 0,    y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-                { locId: null,        x: 770,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
-            { locId: null,        x: 950,  y: 260, w: 150,  h: 160, cls: "rt-empty",   icon: "", label: "" },
-
-            { locId: "stairs-3-south-west", x: 0,    y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southwest Stairs" },
-            { locId: "stairs-3-south-east", x: 900,  y: 450, w: 260, h: 230, cls: "rt-stairs", icon: "🪜", label: "Southeast Stairs" }
-        ],
-        entrance: { x: 10, y: 336, w: 140, h: 48 },
+            { locId: null, x: 0, y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
+            { locId: "300", x: 0, y: 280, w: 230, h: 130, cls: "rt-room", icon: "🚪", label: "Room 300" },
+            { locId: "307", x: 770, y: 270, w: 190, h: 180, cls: "rt-room", icon: "🚪", label: "Room 307" },
+            { locId: "308", x: 700, y: 450, w: 260, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308" },
+            { locId: "308B", x: 560, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308B" },
+            { locId: "309", x: 420, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 309" },
+            { locId: "310", x: 280, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 310" },
+            { locId: "311", x: 140, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 311" },
+            { locId: "312", x: 0, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 312" }
+        ],  
+        /*entrance: { x: 10, y: 336, w: 140, h: 48 },*/
         safety: {
             exits: [
-                { x: -45, y: 345 }, { x: 1170, y: 350 },
-                { x: 50, y: 690 },
+                { x: 10, y: 240 }, { x: 1100, y: 230 },
+               
             ],
             extinguishers: [
-                { x: 350, y: 210 }, { x: 650, y: 210 },
-                { x: 60, y: 410 },   { x: 1130, y: 360 },
-                { x: 450, y: 430 }, { x: 898, y: 430 }, { x: 1010, y: 635 }
+                   { x: 755, y: 360 },
+               
             ],
             hose: [
-                { x: 130, y: 210 }, { x: 1130, y: 430 }
+               /*{ x: 1130, y: 430 }*/
+            ],
+            fireAlarms: [
+                { x: 150, y: 210 }, { x: 600, y: 210 }
             ]
         },
         route: {
@@ -708,7 +828,6 @@ const floorLayouts = {
     4: {
         rooms: [
             { locId: "stairs-4-west",   x: 0,   y: 0,   w: 150, h: 230, cls: "rt-stairs",  icon: "🪜", label: "West Stairs" },
-            { locId: "dean", x: 150, y: 0,   w: 300, h: 230, cls: "rt-special", icon: "⭐", label: "DEAN" },
             { locId: "401",  x: 450, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 401" },
             { locId: "402",  x: 700, y: 0,   w: 250, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 402" },
             { locId: "stairs-4-east",   x: 950, y: 0,   w: 210, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
@@ -915,15 +1034,16 @@ function renderMap() {
     });
 
     // ---------- Entrance tag ----------
-    if (layout.entrance) {
+    const entrances = layout.entrances || (layout.entrance ? [layout.entrance] : []);
+    entrances.forEach(entrance => {
         let en = document.createElement("div");
         en.className = "entrance-tag zoom-stable-icon";
-        en.style.left = pctX(layout.entrance.x);
-        en.style.top = pctY(layout.entrance.y);
+        en.style.left = pctX(entrance.x);
+        en.style.top = pctY(entrance.y);
         en.innerHTML = '<img src="IMAGES/entrance-icon.svg" alt="Entrance icon">';
         en.title = "Entrance";
         b.appendChild(en);
-    }
+    });
 
     // ---------- Walking route (dashed SVG line + arrows) ----------
     let svgNS = "http://www.w3.org/2000/svg";
@@ -1073,17 +1193,20 @@ function locate() {
             "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room → Room 101 - Technology Room";
     } else if (x.id === "tad") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room → Room 101 - Technology Room → 🏛️ TAD";
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → Room 101 - Welding Room → Room 101 - Technology Room → 🏛️ Room 102 - TAD";
     } else if (x.id === "103") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ TAD → Room 103 - Faculty Lounge";
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ Room 102 - TAD → Room 103 - Faculty Lounge";
     } else if (x.id === "104") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ TAD → Room 103 - Faculty Lounge → Room 104";
+            "🚪 Entrance → 🪜 Stairs → 1st Floor Hallway → 🏛️ Room 102 - TAD → Room 103 - Faculty Lounge → Room 104";
 
 
     // -------------------- FLOOR 2 --------------------
 
+    } else if (x.id === "dean") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → 🏛️ Room 209 - DEAN";
     } else if (x.id === "201") {
         route =
             "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201";
@@ -1104,48 +1227,81 @@ function locate() {
             "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206";
     } else if (x.id === "207") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207";
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → 🏛️ Room 207 - HE";
     } else if (x.id === "208") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208";
-    } else if (x.id === "209") {
-        route =
-            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 209";
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → 🏛️ Room 207 - HE → Room 208";
     } else if (x.id === "210") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 209 → Room 210";
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 210";
+    } else if (x.id === "211") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 210 → Room 211";
+    } else if (x.id === "212") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 210 → Room 211 → Room 212";
+    } else if (x.id === "213") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 210 → Room 211 → Room 212 → Room 213";
+    } else if (x.id === "214") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 2nd Floor Hallway → Room 201 → Room 202 → Room 203 → Room 204 → Room 205 → Room 206 → Room 207 → Room 208 → Room 210 → Room 211 → Room 212 → Room 213 → Room 214";
 
 
     // -------------------- FLOOR 3 --------------------
 
+    } else if (x.id === "300") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → Room 300";
     } else if (x.id === "pie") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE";
-    } else if (x.id === "301") {
-        route =
-            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 301";
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ Room 301 - PIE";
     } else if (x.id === "302") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 301 → Room 302";
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302";
     } else if (x.id === "303") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 301 → Room 302 → Room 303";
-    } else if (x.id === "he") {
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303";
+    } else if (x.id === "304") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → Room 301 → Room 302 → Room 303 → 🏛️ HE";
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304";
+    } else if (x.id === "305") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305";
+    } else if (x.id === "306") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306";
+    } else if (x.id === "307") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307";
+    } else if (x.id === "308") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308";
+    } else if (x.id === "308B") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308 → Room 308B";
+    } else if (x.id === "309") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308 → Room 308B → Room 309";
+    } else if (x.id === "310") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308 → Room 308B → Room 309 → Room 310";
+    } else if (x.id === "311") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308 → Room 308B → Room 309 → Room 310 → Room 311";
+    } else if (x.id === "312") {
+        route =
+            "🚪 Entrance → 🪜 Stairs → 3rd Floor Hallway → 🏛️ PIE → Room 302 → Room 303 → Room 304 → Room 305 → Room 306 → Room 307 → Room 308 → Room 308B → Room 309 → Room 310 → Room 311 → Room 312";
 
 
     // -------------------- FLOOR 4 --------------------
 
-    } else if (x.id === "dean") {
-        route =
-            "🚪 Entrance → 🪜 Stairs → 4th Floor Hallway → 🏛️ Dean's Office";
     } else if (x.id === "401") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 4th Floor Hallway → 🏛️ Dean's Office → Room 401";
+            "🚪 Entrance → 🪜 Stairs → 4th Floor Hallway → Room 401";
     } else if (x.id === "402") {
         route =
-            "🚪 Entrance → 🪜 Stairs → 4th Floor Hallway → 🏛️ Dean's Office → Room 401 → Room 402";
+            "🚪 Entrance → 🪜 Stairs → 4th Floor Hallway → Room 401 → Room 402";
 
 
     // -------------------- DEFAULT --------------------
@@ -1189,9 +1345,9 @@ document.getElementById("locateBtn").onclick = locate;
 document.getElementById("closeInfo").onclick = () =>
     infoPanel.classList.add("hidden");
 
-// Reset the application back to Floor 1
+// Reset the application back to Floor 3
 document.getElementById("resetViewBtn").onclick = () =>
-    showFloor(1);
+    showFloor(3);
 
 // ============================================================
 // ZOOM CONTROLS
@@ -1251,6 +1407,7 @@ const panoramas = {
 
     // First floor images
     "cr-male": "360/PIC EXAM.jpg",
+    "cr-female": "360/Girl's Restroom.jpg",
     cafeteria: "360/cafeteria.jpg",
     "welding-room": "360/Room 101 _ Welding Room_.jpg",
     "tech-shop": "360/EXIMG.jpg",
@@ -1258,23 +1415,37 @@ const panoramas = {
     tad: "360/PIC EXAM.jpg",
 
     // Second floor images
-    "201": "360/room201.jpg",
-    "202": "360/EXIMG.jpg",
-    "203": "360/EXIMG.jpg",
-    "204": "360/EXIMG.jpg",
-    "205": "360/EXIMG.jpg",
-    "206": "360/EXIMG.jpg",
-    "207": "360/EXIMG.jpg",
-    "208": "360/EXIMG.jpg",
-    "209": "360/EXIMG.jpg",
-    "210": "360/EXIMG.jpg",
+    cr2: "360/Girl's Restroom.jpg",
+    "201": "360/Room 201.jpg",
+    "202": "360/Room 202.jpg",
+    "203": "360/Room 203.jpg",
+    "204": "360/Room 204.jpg",
+    "205": "360/Room 205.jpg",
+    "206": "360/Room 206.jpg",
+    "207": "360/Room 207.jpg",
+    "208": "360/Room 208.jpg",
+    dean: "360/Room 209.jpg",
+    "210": "360/Room 210.jpg",
+    "211": "360/Room 211.jpg",
+    "212": "360/Room 212.jpg",
+    "213": "360/Room 213.jpg",
+    "214": "360/Room 214.jpg",
 
     // Third floor images
-    "301": "/360/room301.jpg",
-    pie: "360/pie.jpg",
-
-    // Fourth floor images
-    dean: "360/dean.jpg"
+    "300": "360/Room 300.jpg",
+    pie: "360/Room 301.jpg",
+    "302": "360/Room 302.jpg",
+    "303": "360/Room 303.jpg",
+    "304": "360/Room 304.jpg",
+    "305": "360/Room 305.jpg",
+    "306": "360/Room 306.jpg",
+    "307": "360/Room 307.jpg",
+    "308": "360/Room 308.jpg",
+    "308B": "360/Room 308b.jpg",
+    "309": "360/Room 309.jpg",
+    "310": "360/Room 310.jpg",
+    "311": "360/Room 311.jpg",
+    "312": "360/Room 312.jpg"
 };
 
 // ============================================================
@@ -1302,6 +1473,7 @@ const panoramaOrder = [
     "101",
     "tad",
     "cafeteria",
+    "cr2",
     "201",
     "202",
     "203",
@@ -1310,11 +1482,26 @@ const panoramaOrder = [
     "206",
     "207",
     "208",
-    "209",
+    "dean",
     "210",
-    "301",
+    "211",
+    "212",
+    "213",
+    "214",
+    "300",
+    "302",
+    "303",
+    "304",
+    "305",
+    "306",
     "pie",
-    "dean"
+    "307",
+    "308",
+    "308B",
+    "309",
+    "310",
+    "311",
+    "312"
 ];
 let panoramaViewer = null;
 let currentPanoramaId = null;
