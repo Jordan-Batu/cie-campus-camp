@@ -797,7 +797,7 @@ const floorLayouts = {
             { locId: "311", x: 140, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 311" },
             { locId: "312", x: 0, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 312" }
         ],  
-        /*entrance: { x: 10, y: 336, w: 140, h: 48 },*/
+        entrance: { x: 1150, y: 230, w: 140, h: 48 },
         safety: {
             exits: [
                 { x: 10, y: 240 }, { x: 1100, y: 230 },
