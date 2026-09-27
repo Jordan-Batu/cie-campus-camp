@@ -479,7 +479,7 @@ const locations = [
 // ============================================================
 
 // Keeps track of the currently selected floor
-let currentFloor = 2;
+let currentFloor = 1;
 
 // Stores the location currently selected by the user
 let selectedLocation = null;
