@@ -301,7 +301,7 @@ header p {
     position: relative;
     width: min(1160px, 100%);
     aspect-ratio: 1160 / 680;
-    background: #e4dfd2;
+    background: #f4f1ea;
     border: 6px solid #2c333b;
     border-radius: 4px;
     box-shadow: 0 10px 34px rgba(0,0,0,.18);

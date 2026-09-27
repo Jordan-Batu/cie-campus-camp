@@ -206,7 +206,7 @@ const locations = [
 {
     id: "cr2",
     floor: 2,
-    name: "Female's CR",
+    name: "Female's Comfort Room",
     type: "Restroom",
     time: 1
 },
@@ -588,6 +588,8 @@ function renderList() {
     // Cafeteria is explicitly sorted to the top.
     let items = locations
         .filter(x =>
+            x.id !== "cr-female" &&
+            x.id !== "105" &&
             x.floor === currentFloor &&
             [x.name, x.id, x.type, x.shortName || ""]
                 .join(" ")
@@ -617,7 +619,7 @@ function renderList() {
             icon.src = "IMAGES/stairs-icon.svg";
         } else if (x.id === "cr-male") {
             icon.src = "IMAGES/male-restroom-icon.svg";
-        } else if (x.id === "cr-female") {
+        } else if (x.id === "cr-female" || x.id === "cr2") {
             icon.src = "IMAGES/female-restroom-icon.svg";
         } else if (x.special) {
             icon.remove();
