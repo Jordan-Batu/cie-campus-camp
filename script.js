@@ -370,13 +370,14 @@ const locations = [
         time: 2
     },
 
-    // Classroom 306
+    // ST Hall / Room 306
     {
         id: "306",
         floor: 3,
-        name: "Room 306",
-        type: "Classroom",
-        time: 2
+        name: "Room 306 - ST HALL",
+        type: "Department",
+        time: 2,
+        special: true
     },
 
     // Classroom 307
@@ -743,7 +744,8 @@ const floorLayouts = {
             { locId: "212", x: 250,  y: 450, w: 150, h: 230, cls: "rt-special", icon: "⭐", label: "Room 212 - Research / Extension" },
             { locId: "213", x: 0,  y: 450, w: 250, h: 230, cls: "rt-room", icon: "🚪", label: "Room 213" },
             { locId: "dean", x: 700, y: 450, w: 300, h: 230, cls: "rt-special", icon: "⭐", label: "Room 209 - DEAN" },
-            { locId: "208", x: 800,  y: 270, w: 200, h: 180, cls: "rt-room", icon: "🚪", label: "Room 208" }
+            { locId: "208", x: 800,  y: 270, w: 200, h: 180, cls: "rt-room", icon: "🚪", label: "Room 208" },
+            { locId: null, x: 1030, y: 270, w: 111, h: 410, cls: "rt-empty", icon: "", label: "" },
         ],
         entrances: [
             { x: -20, y: 230 },
@@ -784,18 +786,18 @@ const floorLayouts = {
             { locId: "303",          x: 430, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 303" },
             { locId: "304",          x: 580, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 304" },
             { locId: "305",          x: 730, y: 0,   w: 150, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 305" },
-            { locId: "306",          x: 880, y: 0,   w: 191, h: 230, cls: "rt-room",    icon: "🚪", label: "Room 306" },
+            { locId: "306",          x: 880, y: 0,   w: 191, h: 230, cls: "rt-special", icon: "⭐", label: "Room 306 - ST HALL" },
             { locId: "stairs-3-east", x: 1071, y: 0,   w: 90, h: 230, cls: "rt-stairs",  icon: "🪜", label: "East Stairs" },
 
             { locId: null, x: 0, y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
-            { locId: "300", x: 0, y: 280, w: 230, h: 130, cls: "rt-room", icon: "🚪", label: "Room 300" },
+            { locId: "300", x: 0, y: 280, w: 200, h: 130, cls: "rt-room", icon: "🚪", label: "Room 300" },
             { locId: "307", x: 770, y: 270, w: 190, h: 180, cls: "rt-room", icon: "🚪", label: "Room 307" },
-            { locId: "308", x: 700, y: 450, w: 260, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308" },
-            { locId: "308B", x: 560, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308B" },
-            { locId: "309", x: 420, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 309" },
-            { locId: "310", x: 280, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 310" },
-            { locId: "311", x: 140, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 311" },
-            { locId: "312", x: 0, y: 450, w: 140, h: 230, cls: "rt-room", icon: "🚪", label: "Room 312" }
+            { locId: "308", x: 680, y: 450, w: 280, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308" },
+            { locId: "308B", x: 560, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308B" },
+            { locId: "309", x: 440, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 309" },
+            { locId: "310", x: 320, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 310" },
+            { locId: "311", x: 200, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 311" },
+            { locId: "312", x: 0, y: 450, w: 200, h: 230, cls: "rt-room", icon: "🚪", label: "Room 312" }
         ],  
         entrance: { x: 1150, y: 230, w: 140, h: 48 },
         safety: {
@@ -804,14 +806,14 @@ const floorLayouts = {
                
             ],
             extinguishers: [
-                   { x: 755, y: 360 },
+                   { x: 755, y: 360 }, { x: 940, y: 210}, { x: 350, y: 430},
                
             ],
             hose: [
                /*{ x: 1130, y: 430 }*/
             ],
             fireAlarms: [
-                { x: 150, y: 210 }, { x: 600, y: 210 }
+                { x: 150, y: 210 }, { x: 600, y: 210 }, { x: 1000, y: 210 }
             ]
         },
         route: {
