@@ -792,6 +792,7 @@ const floorLayouts = {
             { locId: null, x: 0, y: 230, w: 1160, h: 220, cls: "rt-hallway", icon: "", label: "", garden: true },
             { locId: "300", x: 0, y: 280, w: 200, h: 130, cls: "rt-room", icon: "🚪", label: "Room 300" },
             { locId: "307", x: 770, y: 270, w: 190, h: 180, cls: "rt-room", icon: "🚪", label: "Room 307" },
+            { locId: null, x: 1030, y: 270, w: 111, h: 410, cls: "rt-empty", icon: "", label: "" },
             { locId: "308", x: 680, y: 450, w: 280, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308" },
             { locId: "308B", x: 560, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 308B" },
             { locId: "309", x: 440, y: 450, w: 120, h: 230, cls: "rt-room", icon: "🚪", label: "Room 309" },
